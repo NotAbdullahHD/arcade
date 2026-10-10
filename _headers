@@ -1,0 +1,4 @@
+/img/covers/*
+  Cache-Control: public, max-age=2592000
+/*
+  X-Content-Type-Options: nosniff

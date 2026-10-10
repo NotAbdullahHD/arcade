@@ -1,0 +1,14 @@
+<!doctype html><html><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>GhostMath test</title>
+<style>body{font:16px system-ui;padding:20px;max-width:700px;margin:auto}.ok{color:#1a7f37}.bad{color:#c62828}li{margin:6px 0}</style></head><body>
+<h2>Connection test</h2><p>Checks which hosts your browser can reach. Send a screenshot of this page if games fail.</p><ul id="r"></ul>
+<script>
+var T=[
+['jsDelivr',"https://cdn.jsdelivr.net/gh/gn-math/html@main/119.html"],
+['jsDelivr fastly',"https://fastly.jsdelivr.net/gh/gn-math/html@main/119.html"],
+['jsDelivr gcore',"https://gcore.jsdelivr.net/gh/gn-math/html@main/119.html"],
+['GitHub raw',"https://raw.githubusercontent.com/gn-math/html/main/119.html"],
+['Snow Rider files',"https://cdn.jsdelivr.net/gh/drippy-cat/snowrider3D@c82fe583cbffafa502b0aa3ed2da0053972e0c80/Build/UnityLoader.js"],
+['Paper.io files',"https://cdn.jsdelivr.net/gh/bobydob/JSEngine@dcbe63e923bb7f943bf4e1feceb996ddff033f48/build/ppo2/app-new-gm.js"]];
+T.forEach(function(t){var li=document.createElement('li');li.textContent=t[0]+': testing...';document.getElementById('r').appendChild(li);
+fetch(t[1]).then(function(r){li.className=r.ok?'ok':'bad';li.textContent=t[0]+': '+(r.ok?'OK':'HTTP '+r.status)}).catch(function(e){li.className='bad';li.textContent=t[0]+': FAILED ('+e.message+')'})});
+</script></body></html>
